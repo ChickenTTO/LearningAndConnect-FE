@@ -1,7 +1,11 @@
 import React from "react";
 import "./login.css";
 import { FaUser, FaLock } from "react-icons/fa";
-function login() {
+import { useNavigate } from "react-router-dom";
+
+function Login() {
+  const navigate = useNavigate();
+
   return (
     <div className="login">
       <div className="dashboard">
@@ -28,10 +32,16 @@ function login() {
               <p>Fogot Password?</p>
             </div>
           </div>
+          <div className="button-login">
+            <button>Login</button>
+          </div>
+          <div className="no-account">
+            <p>Dont't have an account? <span onClick={() => navigate('/sign-up')}>Register</span></p>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default login;
+export default Login;
